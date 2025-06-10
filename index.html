@@ -527,7 +527,7 @@
         .footer {
             background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 40px 0;
+            padding: 40px 0 0 0;
             margin-top: 50px;
         }
         
@@ -535,11 +535,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
+            margin-bottom: 30px;
         }
         
         .footer-section h4 {
             margin-bottom: 15px;
             color: var(--primary-color);
+            font-size: 1.1rem;
         }
         
         .footer-section ul {
@@ -555,34 +557,219 @@
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .footer-section ul li a:hover {
             color: var(--primary-color);
         }
         
-        .social-links {
+        /* New footer styles */
+        .footer-stats {
             display: flex;
             gap: 15px;
             margin-top: 15px;
+            flex-wrap: wrap;
         }
         
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--primary-color);
+        .mini-stat {
+            text-align: center;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            flex: 1;
+            min-width: 60px;
+        }
+        
+        .mini-stat strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .mini-stat span {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+        
+        .popular-tools-list {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .popular-tools-list li {
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .popular-tools-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .popular-tools-list a {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            padding: 4px 0;
+            font-weight: 500;
         }
         
-        .social-link:hover {
+        .popular-tools-list a:before {
+            content: "🔥";
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+        
+        .quick-nav-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .quick-nav-grid strong {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info i {
+            margin-right: 8px;
+            width: 16px;
+        }
+        
+        .legal-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+        
+        .legal-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .language-selector-footer {
+            margin-top: 15px;
+        }
+        
+        .language-selector-footer strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+        
+        .language-selector-footer select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            width: 100%;
+            max-width: 200px;
+        }
+        
+        .language-selector-footer select option {
+            background: #1e293b;
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .copyright p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+        
+        .update-info {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+        
+        .divider {
+            margin: 0 8px;
+        }
+        
+        .footer-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .footer-btn {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .footer-btn:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .feedback-btn {
+            background: #10b981;
+        }
+        
+        .feedback-btn:hover {
+            background: #059669;
+        }
+        
+        /* Modal styles */
+        .modal-content {
+            border-radius: 16px;
+            border: none;
+        }
+        
+        .modal-header {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 16px 16px 0 0;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            line-height: 1.6;
         }
         
         /* Responsive Design */
@@ -620,6 +807,36 @@
             
             .search-input {
                 padding: 15px 20px 15px 50px;
+            }
+        }
+        
+        /* Responsive design for footer */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .quick-nav-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .footer-stats {
+                justify-content: space-between;
+            }
+            
+            .mini-stat {
+                min-width: 70px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-actions {
+                order: -1;
             }
         }
         
@@ -1684,57 +1901,138 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- About Section -->
                 <div class="footer-section">
                     <h4 data-i18n="footer.about">About AI Tools Hub</h4>
                     <p data-i18n="footer.about.desc">We curate the best AI tools to help businesses and individuals leverage the power of artificial intelligence.</p>
+                    <div class="footer-stats">
+                        <div class="mini-stat">
+                            <strong>29</strong>
+                            <span data-i18n="footer.tools.verified">Verified Tools</span>
+                        </div>
+                        <div class="mini-stat">
+                            <strong>6</strong>
+                            <span data-i18n="footer.categories.count">Categories</span>
+                        </div>
+                        <div class="mini-stat">
+                            <strong>4</strong>
+                            <span data-i18n="footer.languages.count">Languages</span>
+                        </div>
+                    </div>
                 </div>
                 
+                <!-- Popular Tools -->
                 <div class="footer-section">
-                    <h4 data-i18n="footer.categories">Categories</h4>
-                    <ul>
-                        <li><a href="#categories" data-i18n="categories.chatbots">AI Chatbots</a></li>
-                        <li><a href="#categories" data-i18n="categories.image">AI Image Generation</a></li>
-                        <li><a href="#categories" data-i18n="categories.writing">AI Writing Tools</a></li>
-                        <li><a href="#categories" data-i18n="categories.coding">AI Coding Tools</a></li>
-                        <li><a href="#categories" data-i18n="categories.video">AI Video Tools</a></li>
-                        <li><a href="#categories" data-i18n="categories.audio">AI Audio Tools</a></li>
+                    <h4 data-i18n="footer.popular">🔥 Popular Tools</h4>
+                    <ul class="popular-tools-list">
+                        <li><a href="https://chat.openai.com" target="_blank">ChatGPT</a></li>
+                        <li><a href="https://midjourney.com" target="_blank">Midjourney</a></li>
+                        <li><a href="https://claude.ai" target="_blank">Claude</a></li>
+                        <li><a href="https://github.com/features/copilot" target="_blank">GitHub Copilot</a></li>
+                        <li><a href="https://cursor.sh" target="_blank">Cursor</a></li>
                     </ul>
                 </div>
                 
+                <!-- Quick Navigation -->
                 <div class="footer-section">
-                    <h4 data-i18n="footer.languages">Languages</h4>
-                    <ul>
-                        <li><a href="#" onclick="switchLanguage('en')" data-i18n="lang.english">English</a></li>
-                        <li><a href="#" onclick="switchLanguage('id')" data-i18n="lang.indonesian">Indonesian</a></li>
-                        <li><a href="#" onclick="switchLanguage('th')" data-i18n="lang.thai">Thai</a></li>
-                        <li><a href="#" onclick="switchLanguage('vi')" data-i18n="lang.vietnamese">Vietnamese</a></li>
-                    </ul>
+                    <h4 data-i18n="footer.quicknav">Quick Navigation</h4>
+                    <div class="quick-nav-grid">
+                        <div>
+                            <strong data-i18n="footer.nav.tools">Tools</strong>
+                            <ul>
+                                <li><a href="#categories" data-i18n="categories.chatbots">AI Chatbots</a></li>
+                                <li><a href="#categories" data-i18n="categories.image">AI Image Generation</a></li>
+                                <li><a href="#categories" data-i18n="categories.writing">AI Writing Tools</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong data-i18n="footer.nav.filters">Filters</strong>
+                            <ul>
+                                <li><a href="#" onclick="filterTools('free')" data-i18n="filter.free">Free Tools</a></li>
+                                <li><a href="#" onclick="filterTools('premium')" data-i18n="filter.premium">Premium Tools</a></li>
+                                <li><a href="#" onclick="filterTools('opensource')" data-i18n="filter.opensource">Open Source</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 
+                <!-- Contact & Legal -->
                 <div class="footer-section">
-                    <h4 data-i18n="footer.info">Information</h4>
-                    <p data-i18n="footer.update">Last updated: <span id="lastUpdate">January 2025</span></p>
-                    <p data-i18n="footer.tools.count">Featured tools: <span>29</span></p>
-                    <p>
-                        <span data-i18n="footer.contact">Contact us:</span><br>
-                        <i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                        <a href="mailto:xialang22@gmail.com" style="color: #6366f1; text-decoration: none; font-weight: 500;">
-                            xialang22@gmail.com
-                        </a>
-                    </p>
+                    <h4 data-i18n="footer.contact.title">Contact & Legal</h4>
+                    <div class="contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:xialang22@gmail.com" style="color: #6366f1; text-decoration: none; font-weight: 500;">
+                                xialang22@gmail.com
+                            </a>
+                        </p>
+                        <p data-i18n="footer.response.time">
+                            <i class="fas fa-clock"></i>
+                            <span>Response within 24 hours</span>
+                        </p>
+                    </div>
+                    
+                    <div class="legal-links">
+                        <a href="#" onclick="showModal('privacy')" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="#" onclick="showModal('terms')" data-i18n="footer.terms">Terms of Use</a>
+                        <a href="#" onclick="showModal('disclaimer')" data-i18n="footer.disclaimer">Disclaimer</a>
+                    </div>
+                    
+                    <div class="language-selector-footer">
+                        <strong data-i18n="footer.language.select">Language:</strong>
+                        <select onchange="switchLanguage(this.value)" id="footerLangSelect">
+                            <option value="en">🇺🇸 English</option>
+                            <option value="id">🇮🇩 Indonesian</option>
+                            <option value="th">🇹🇭 Thai</option>
+                            <option value="vi">🇻🇳 Vietnamese</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             
-            <div class="text-center mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.2);">
-                <p data-i18n="footer.copyright">&copy; 2024 AI Tools Hub. All rights reserved.</p>
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p data-i18n="footer.copyright">&copy; 2025 AI Tools Hub. All rights reserved.</p>
+                        <p class="update-info">
+                            <span data-i18n="footer.last.update">Last updated:</span>
+                            <span class="update-date">January 15, 2025</span>
+                            <span class="divider">•</span>
+                            <span data-i18n="footer.version">Version 1.0</span>
+                        </p>
+                    </div>
+                    
+                    <div class="footer-actions">
+                        <button onclick="scrollToTop()" class="footer-btn" data-i18n="footer.back.top">
+                            <i class="fas fa-arrow-up"></i> Back to Top
+                        </button>
+                        <button onclick="showModal('feedback')" class="footer-btn feedback-btn" data-i18n="footer.feedback">
+                            <i class="fas fa-heart"></i> Feedback
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-
-    <!-- Scroll to top button -->
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    
+    <!-- Modal for Legal Pages -->
+    <div class="modal fade" id="legalModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="modal.close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -1825,17 +2123,25 @@
                 // Footer
                 'footer.about': 'About AI Tools Hub',
                 'footer.about.desc': 'We curate the best AI tools to help businesses and individuals leverage the power of artificial intelligence.',
-                'footer.categories': 'Categories',
-                'footer.languages': 'Languages',
-                'footer.info': 'Information',
-                'footer.update': 'Last updated:',
-                'footer.tools.count': 'Featured tools:',
-                'footer.contact': 'Contact us:',
+                'footer.tools.verified': 'Verified Tools',
+                'footer.categories.count': 'Categories',
+                'footer.languages.count': 'Languages',
+                'footer.popular': '🔥 Popular Tools',
+                'footer.quicknav': 'Quick Navigation',
+                'footer.nav.tools': 'Tools',
+                'footer.nav.filters': 'Filters',
+                'footer.contact.title': 'Contact & Legal',
+                'footer.response.time': 'Response within 24 hours',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Use',
+                'footer.disclaimer': 'Disclaimer',
+                'footer.language.select': 'Language:',
                 'footer.copyright': '© 2025 AI Tools Hub. All rights reserved.',
-                'lang.english': 'English',
-                'lang.indonesian': 'Indonesian',
-                'lang.thai': 'Thai',
-                'lang.vietnamese': 'Vietnamese',
+                'footer.last.update': 'Last updated:',
+                'footer.version': 'Version 1.0',
+                'footer.back.top': 'Back to Top',
+                'footer.feedback': 'Feedback',
+                'modal.close': 'Close',
                 
                 // Open Graph
                 'og.url': 'https://alatai.id/',
@@ -1930,17 +2236,25 @@
                 // Footer
                 'footer.about': 'Tentang Hub Alat AI',
                 'footer.about.desc': 'Kami mengkurasi alat AI terbaik untuk membantu bisnis dan individu memanfaatkan kekuatan kecerdasan buatan.',
-                'footer.categories': 'Kategori',
-                'footer.languages': 'Bahasa',
-                'footer.info': 'Informasi',
-                'footer.update': 'Terakhir diperbarui:',
-                'footer.tools.count': 'Alat unggulan:',
-                'footer.contact': 'Hubungi kami:',
+                'footer.tools.verified': 'Alat Terverifikasi',
+                'footer.categories.count': 'Kategori',
+                'footer.languages.count': 'Bahasa',
+                'footer.popular': '🔥 Alat Populer',
+                'footer.quicknav': 'Navigasi Cepat',
+                'footer.nav.tools': 'Alat',
+                'footer.nav.filters': 'Filter',
+                'footer.contact.title': 'Kontak & Legal',
+                'footer.response.time': 'Respon dalam 24 jam',
+                'footer.privacy': 'Kebijakan Privasi',
+                'footer.terms': 'Syarat Penggunaan',
+                'footer.disclaimer': 'Penyangkalan',
+                'footer.language.select': 'Bahasa:',
                 'footer.copyright': '© 2025 Hub Alat AI. Semua hak dilindungi.',
-                'lang.english': 'Bahasa Inggris',
-                'lang.indonesian': 'Bahasa Indonesia',
-                'lang.thai': 'Bahasa Thailand',
-                'lang.vietnamese': 'Bahasa Vietnam',
+                'footer.last.update': 'Terakhir diperbarui:',
+                'footer.version': 'Versi 1.0',
+                'footer.back.top': 'Kembali ke Atas',
+                'footer.feedback': 'Umpan Balik',
+                'modal.close': 'Tutup',
                 
                 // Open Graph
                 'og.url': 'https://alatai.id/id/',
@@ -2179,7 +2493,160 @@
             // 初始化导航栏状态
             handleNavbarScroll();
             handleScrollTopButton();
+            
+            // 同步footer语言选择器
+            updateFooterLanguageSelector();
         });
+
+        // 显示模态框功能
+        function showModal(type) {
+            const modal = new bootstrap.Modal(document.getElementById('legalModal'));
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            let title = '';
+            let content = '';
+            
+            switch(type) {
+                case 'privacy':
+                    title = 'Privacy Policy';
+                    content = `
+                        <h5>Privacy Policy for AI Tools Hub</h5>
+                        <p>Last updated: January 15, 2025</p>
+                        
+                        <h6>Information We Collect</h6>
+                        <p>We may collect basic analytics data to improve our service, including:</p>
+                        <ul>
+                            <li>Page views and website usage statistics</li>
+                            <li>Browser type and device information</li>
+                            <li>Language preferences</li>
+                        </ul>
+                        
+                        <h6>How We Use Information</h6>
+                        <p>We use collected information to:</p>
+                        <ul>
+                            <li>Improve our website functionality</li>
+                            <li>Provide better user experience</li>
+                            <li>Analyze usage patterns</li>
+                        </ul>
+                        
+                        <h6>Contact Us</h6>
+                        <p>If you have questions about this Privacy Policy, please contact us at xialang22@gmail.com</p>
+                    `;
+                    break;
+                    
+                case 'terms':
+                    title = 'Terms of Use';
+                    content = `
+                        <h5>Terms of Use for AI Tools Hub</h5>
+                        <p>Last updated: January 15, 2025</p>
+                        
+                        <h6>Acceptance of Terms</h6>
+                        <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                        
+                        <h6>Use License</h6>
+                        <p>Permission is granted to temporarily use this website for personal, non-commercial transitory viewing only.</p>
+                        
+                        <h6>Disclaimer</h6>
+                        <p>The information on this website is provided on an "as is" basis. To the fullest extent permitted by law, this Company excludes all representations, warranties, and conditions.</p>
+                        
+                        <h6>Contact</h6>
+                        <p>Questions about the Terms of Use should be sent to us at xialang22@gmail.com</p>
+                    `;
+                    break;
+                    
+                case 'disclaimer':
+                    title = 'Disclaimer';
+                    content = `
+                        <h5>Disclaimer for AI Tools Hub</h5>
+                        <p>Last updated: January 15, 2025</p>
+                        
+                        <h6>External Links</h6>
+                        <p>Our website contains links to external tools and services. We have no control over these external sites and cannot guarantee their availability or content quality.</p>
+                        
+                        <h6>Tool Information</h6>
+                        <p>While we strive to keep tool information accurate and up-to-date, we make no representations or warranties about the completeness, accuracy, or reliability of any information.</p>
+                        
+                        <h6>User Responsibility</h6>
+                        <p>Users are responsible for evaluating the suitability of any AI tools for their specific needs. We recommend checking the official websites of tools before use.</p>
+                    `;
+                    break;
+                    
+                case 'feedback':
+                    title = 'Send Feedback';
+                    content = `
+                        <h5>We'd Love Your Feedback!</h5>
+                        <p>Help us improve AI Tools Hub by sharing your thoughts and suggestions.</p>
+                        
+                        <div class="feedback-options">
+                            <div class="feedback-option">
+                                <h6><i class="fas fa-envelope"></i> Email Us</h6>
+                                <p>Send detailed feedback to: <a href="mailto:xialang22@gmail.com?subject=AI Tools Hub Feedback">xialang22@gmail.com</a></p>
+                            </div>
+                            
+                            <div class="feedback-option">
+                                <h6><i class="fas fa-star"></i> Rate Us</h6>
+                                <p>How would you rate your experience?</p>
+                                <div class="rating-stars">
+                                    <span onclick="setRating(1)">⭐</span>
+                                    <span onclick="setRating(2)">⭐</span>
+                                    <span onclick="setRating(3)">⭐</span>
+                                    <span onclick="setRating(4)">⭐</span>
+                                    <span onclick="setRating(5)">⭐</span>
+                                </div>
+                            </div>
+                            
+                            <div class="feedback-option">
+                                <h6><i class="fas fa-plus"></i> Suggest a Tool</h6>
+                                <p>Know an amazing AI tool we should feature? Let us know!</p>
+                            </div>
+                        </div>
+                        
+                        <style>
+                            .feedback-option {
+                                padding: 15px;
+                                border: 1px solid #e2e8f0;
+                                border-radius: 8px;
+                                margin-bottom: 15px;
+                            }
+                            .rating-stars span {
+                                cursor: pointer;
+                                font-size: 1.5rem;
+                                margin-right: 5px;
+                            }
+                            .rating-stars span:hover {
+                                transform: scale(1.2);
+                            }
+                        </style>
+                    `;
+                    break;
+            }
+            
+            modalTitle.textContent = title;
+            modalBody.innerHTML = content;
+            modal.show();
+        }
+
+        // 评分功能
+        function setRating(stars) {
+            alert(`Thank you for rating us ${stars} stars! Your feedback helps us improve.`);
+        }
+
+        // 同步footer语言选择器
+        function updateFooterLanguageSelector() {
+            const currentLang = localStorage.getItem('preferred-language') || 'en';
+            const footerSelect = document.getElementById('footerLangSelect');
+            if (footerSelect) {
+                footerSelect.value = currentLang;
+            }
+        }
+
+        // 修改语言切换函数以同步footer选择器
+        const originalSwitchLanguage = switchLanguage;
+        switchLanguage = function(lang) {
+            originalSwitchLanguage.call(this, lang);
+            updateFooterLanguageSelector();
+        };
     </script>
 </body>
 </html>

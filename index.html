@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">AI Tools Directory - Discover Best AI Tools</title>
+    <meta name="description" data-i18n="description" content="Discover the best AI tools for your business needs. Free & premium AI chatbots, image generators, writing assistants & coding tools directory.">
+    <meta name="keywords" data-i18n="keywords" content="AI tools, artificial intelligence, chatbot, image generation, writing assistant, coding tools, free AI, premium AI">
+    <meta name="author" content="AI Tools Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alatai.id/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" data-i18n="og.url" content="https://alatai.id/">
+    <meta property="og:title" data-i18n="og.title" content="AI Tools Directory - Discover Best AI Tools">
+    <meta property="og:description" data-i18n="og.description" content="Discover the best AI tools for your business needs. Free & premium AI chatbots, image generators, writing assistants & coding tools.">
+    <meta property="og:image" content="https://alatai.id/images/og-image.jpg">
+    <meta property="og:site_name" content="AI Tools Hub">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" data-i18n="twitter.url" content="https://alatai.id/">
+    <meta property="twitter:title" data-i18n="twitter.title" content="AI Tools Directory - Discover Best AI Tools">
+    <meta property="twitter:description" data-i18n="twitter.description" content="Discover the best AI tools for your business needs. Free & premium AI chatbots, image generators, writing assistants & coding tools.">
+    <meta property="twitter:image" content="https://alatai.id/images/twitter-image.jpg">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- hreflang标签用于SEO -->
+    <link rel="alternate" hreflang="x-default" href="https://alatai.id/" />
+    <link rel="alternate" hreflang="en" href="https://alatai.id/en/" />
+    <link rel="alternate" hreflang="id" href="https://alatai.id/id/" />
+    <link rel="alternate" hreflang="th" href="https://alatai.id/th/" />
+    <link rel="alternate" hreflang="vi" href="https://alatai.id/vi/" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI Tools Hub",
+        "description": "Discover the best AI tools for your business needs",
+        "url": "https://alatai.id",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://alatai.id/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        },
+        "sameAs": [
+            "https://twitter.com/aitoolshub",
+            "https://facebook.com/aitoolshub"
+        ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #f8fafc;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Loading animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .loading.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+            text-decoration: none;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-color) !important;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            padding: 100px 0 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .search-input {
+            border: none;
+            border-radius: 50px;
+            padding: 18px 25px 18px 55px;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .search-input:focus {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+        
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 15px;
+            margin: 0 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+        
+        .tools-container {
+            background: white;
+            border-radius: 24px;
+            margin: -50px auto 50px;
+            max-width: 1200px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tools-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--success-color), var(--warning-color));
+        }
+        
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-count {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            background: var(--secondary-color);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: var(--primary-color);
+        }
+        
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .tool-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .tool-info {
+            flex: 1;
+        }
+        
+        .tool-name {
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 0 5px 0;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .tool-name:hover {
+            color: var(--primary-color);
+        }
+        
+        .tool-url {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .tool-description {
+            color: var(--text-light);
+            margin: 15px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        
+        .tool-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .tool-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag.free {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .tag.premium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .tag.opensource {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .tag.enterprise {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+        
+        .tool-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--warning-color);
+            font-size: 0.9rem;
+        }
+        
+        .stats-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .stat-label {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+            
+            .tools-container {
+                margin: -30px 15px 30px;
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+            
+            .language-switcher {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 20px;
+                text-align: center;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .search-input {
+                padding: 15px 20px 15px 50px;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #1e293b;
+                --text-color: #f1f5f9;
+                --text-light: #94a3b8;
+                --border-color: #334155;
+            }
+            
+            .tools-container {
+                background: #0f172a;
+                color: var(--text-color);
+            }
+            
+            .tool-card {
+                background: var(--secondary-color);
+                border-color: var(--border-color);
+            }
+            
+            .navbar {
+                background: rgba(15, 23, 42, 0.95);
+            }
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .scroll-top.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 语言切换器 -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('id')">ID</button>
+        <button class="lang-btn" onclick="switchLanguage('th')">TH</button>
+        <button class="lang-btn" onclick="switchLanguage('vi')">VI</button>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-i18n="brand">🤖 AI Tools Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#" data-i18n="nav.home">Home</a>
+                    <a class="nav-link" href="#categories" data-i18n="nav.categories">Categories</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主页面内容 -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero.title">Discover Amazing AI Tools</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Find the perfect AI solution for your business needs</p>
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="form-control search-input" data-i18n-placeholder="search.placeholder" placeholder="Search AI tools..." id="searchInput">
+                </div>
+            </div>
+        </div>
+        
+        <!-- 统计信息 -->
+        <div class="container">
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="150">150+</span>
+                        <span class="stat-label" data-i18n="stats.tools">AI Tools</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="12">12</span>
+                        <span class="stat-label" data-i18n="stats.categories">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50000">50K+</span>
+                        <span class="stat-label" data-i18n="stats.users">Monthly Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="4">4</span>
+                        <span class="stat-label" data-i18n="stats.languages">Languages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 工具展示区域 -->
+    <div class="container" id="categories">
+        <div class="tools-container">
+            <!-- 聊天机器人类别 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title" data-i18n="categories.chatbots">
+                        <i class="fas fa-robot"></i>AI Chatbots
+                    </h2>
+                    <span class="category-count">6</span>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://chat.openai.com" class="tool-name" target="_blank">ChatGPT</a>
+                                <a href="https://chat.openai.com" class="tool-url" target="_blank">chat.openai.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.chatgpt.desc">Advanced conversational AI by OpenAI for text generation, coding, and problem-solving</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://claude.ai" class="tool-name" target="_blank">Claude</a>
+                                <a href="https://claude.ai" class="tool-url" target="_blank">claude.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.claude.desc">AI assistant by Anthropic for various tasks including analysis, writing, and coding</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://bard.google.com" class="tool-name" target="_blank">Google Bard</a>
+                                <a href="https://bard.google.com" class="tool-url" target="_blank">bard.google.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.bard.desc">Google's experimental conversational AI service powered by LaMDA</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://character.ai" class="tool-name" target="_blank">Character.AI</a>
+                                <a href="https://character.ai" class="tool-url" target="_blank">character.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.character.desc">Chat with AI characters or create your own with distinct personalities</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://poe.com" class="tool-name" target="_blank">Poe</a>
+                                <a href="https://poe.com" class="tool-url" target="_blank">poe.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.poe.desc">Access multiple AI chatbots including GPT-4, Claude, and others in one platform</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://pi.ai" class="tool-name" target="_blank">Pi AI</a>
+                                <a href="https://pi.ai" class="tool-url" target="_blank">pi.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.pi.desc">Personal AI assistant focused on helpful, harmless conversations</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 图像生成类别 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title" data-i18n="categories.image">
+                        <i class="fas fa-image"></i>AI Image Generation
+                    </h2>
+                    <span class="category-count">8</span>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://midjourney.com" class="tool-name" target="_blank">Midjourney</a>
+                                <a href="https://midjourney.com" class="tool-url" target="_blank">midjourney.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.midjourney.desc">Create stunning AI-generated artwork with advanced prompting</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://openai.com/dall-e-2" class="tool-name" target="_blank">DALL-E 2</a>
+                                <a href="https://openai.com/dall-e-2" class="tool-url" target="_blank">openai.com/dall-e-2</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.dalle.desc">OpenAI's image generation AI that creates realistic images from text descriptions</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://stability.ai" class="tool-name" target="_blank">Stable Diffusion</a>
+                                <a href="https://stability.ai" class="tool-url" target="_blank">stability.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.stable.desc">Open-source image generation model that runs locally or in the cloud</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag opensource" data-i18n="tags.opensource">Open Source</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-paintbrush"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://leonardo.ai" class="tool-name" target="_blank">Leonardo.AI</a>
+                                <a href="https://leonardo.ai" class="tool-url" target="_blank">leonardo.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.leonardo.desc">AI art generator focused on game assets and creative content</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://playground.ai" class="tool-name" target="_blank">Playground AI</a>
+                                <a href="https://playground.ai" class="tool-url" target="_blank">playground.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.playground.desc">User-friendly AI image generator with multiple model options</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.canva.com/ai-image-generator/" class="tool-name" target="_blank">Canva AI</a>
+                                <a href="https://www.canva.com/ai-image-generator/" class="tool-url" target="_blank">canva.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.canva.desc">Integrated AI image generator within Canva's design platform</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://firefly.adobe.com" class="tool-name" target="_blank">Adobe Firefly</a>
+                                <a href="https://firefly.adobe.com" class="tool-url" target="_blank">firefly.adobe.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.firefly.desc">Adobe's AI image generator integrated with Creative Cloud apps</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://runwayml.com" class="tool-name" target="_blank">Runway ML</a>
+                                <a href="https://runwayml.com" class="tool-url" target="_blank">runwayml.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.runway.desc">AI-powered creative tools for image, video, and audio generation</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 写作助手类别 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title" data-i18n="categories.writing">
+                        <i class="fas fa-pen"></i>AI Writing Tools
+                    </h2>
+                    <span class="category-count">6</span>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://jasper.ai" class="tool-name" target="_blank">Jasper</a>
+                                <a href="https://jasper.ai" class="tool-url" target="_blank">jasper.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.jasper.desc">AI copywriter for marketing content, blogs, and ad copy</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-copy"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://copy.ai" class="tool-name" target="_blank">Copy.ai</a>
+                                <a href="https://copy.ai" class="tool-url" target="_blank">copy.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.copyai.desc">AI-powered copywriting assistant for various content types</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-spell-check"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.grammarly.com" class="tool-name" target="_blank">Grammarly</a>
+                                <a href="https://www.grammarly.com" class="tool-url" target="_blank">grammarly.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.grammarly.desc">AI writing assistant for grammar, spelling, and style improvements</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.notion.so/product/ai" class="tool-name" target="_blank">Notion AI</a>
+                                <a href="https://www.notion.so/product/ai" class="tool-url" target="_blank">notion.so</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.notion.desc">AI writing assistant integrated into Notion workspace</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://writesonic.com" class="tool-name" target="_blank">Writesonic</a>
+                                <a href="https://writesonic.com" class="tool-url" target="_blank">writesonic.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.writesonic.desc">AI content generator for articles, ads, and marketing copy</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.sudowrite.com" class="tool-name" target="_blank">Sudowrite</a>
+                                <a href="https://www.sudowrite.com" class="tool-url" target="_blank">sudowrite.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.sudowrite.desc">AI writing assistant specifically designed for creative fiction writing</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 代码助手类别 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title" data-i18n="categories.coding">
+                        <i class="fas fa-code"></i>AI Coding Tools
+                    </h2>
+                    <span class="category-count">6</span>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://github.com/features/copilot" class="tool-name" target="_blank">GitHub Copilot</a>
+                                <a href="https://github.com/features/copilot" class="tool-url" target="_blank">github.com/copilot</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.copilot.desc">AI pair programmer that suggests code completions and entire functions</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://cursor.sh" class="tool-name" target="_blank">Cursor</a>
+                                <a href="https://cursor.sh" class="tool-url" target="_blank">cursor.sh</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.cursor.desc">AI-powered code editor built for pair programming with AI</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.tabnine.com" class="tool-name" target="_blank">Tabnine</a>
+                                <a href="https://www.tabnine.com" class="tool-url" target="_blank">tabnine.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.tabnine.desc">AI code completion tool that works with multiple IDEs and languages</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.replit.com/ai" class="tool-name" target="_blank">Replit AI</a>
+                                <a href="https://www.replit.com/ai" class="tool-url" target="_blank">replit.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.replit.desc">AI coding assistant integrated into Replit's online IDE</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://codeium.com" class="tool-name" target="_blank">Codeium</a>
+                                <a href="https://codeium.com" class="tool-url" target="_blank">codeium.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.codeium.desc">Free AI-powered code completion and chat assistant</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://aws.amazon.com/codewhisperer/" class="tool-name" target="_blank">CodeWhisperer</a>
+                                <a href="https://aws.amazon.com/codewhisperer/" class="tool-url" target="_blank">aws.amazon.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.codewhisperer.desc">Amazon's AI code generator with security scanning capabilities</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 视频生成类别 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title" data-i18n="categories.video">
+                        <i class="fas fa-video"></i>AI Video Tools
+                    </h2>
+                    <span class="category-count">5</span>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.synthesia.io" class="tool-name" target="_blank">Synthesia</a>
+                                <a href="https://www.synthesia.io" class="tool-url" target="_blank">synthesia.io</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.synthesia.desc">AI video generator with realistic avatars and voiceovers</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://luma.ai" class="tool-name" target="_blank">Luma AI</a>
+                                <a href="https://luma.ai" class="tool-url" target="_blank">luma.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.luma.desc">AI-powered 3D video capture and generation technology</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-microphone-alt"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.descript.com" class="tool-name" target="_blank">Descript</a>
+                                <a href="https://www.descript.com" class="tool-url" target="_blank">descript.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.descript.desc">AI video editor with transcription and voice cloning features</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://pictory.ai" class="tool-name" target="_blank">Pictory</a>
+                                <a href="https://pictory.ai" class="tool-url" target="_blank">pictory.ai</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.pictory.desc">AI video creator that turns text content into engaging videos</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.heygen.com" class="tool-name" target="_blank">HeyGen</a>
+                                <a href="https://www.heygen.com" class="tool-url" target="_blank">heygen.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.heygen.desc">AI video generator with customizable avatars and multilingual support</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 音频生成类别 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title" data-i18n="categories.audio">
+                        <i class="fas fa-music"></i>AI Audio Tools
+                    </h2>
+                    <span class="category-count">4</span>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-volume-up"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://elevenlabs.io" class="tool-name" target="_blank">ElevenLabs</a>
+                                <a href="https://elevenlabs.io" class="tool-url" target="_blank">elevenlabs.io</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.elevenlabs.desc">Advanced AI voice synthesis and voice cloning technology</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://mubert.com" class="tool-name" target="_blank">Mubert</a>
+                                <a href="https://mubert.com" class="tool-url" target="_blank">mubert.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.mubert.desc">AI music generator for royalty-free background music</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-podcast"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://podcast.adobe.com" class="tool-name" target="_blank">Adobe Podcast</a>
+                                <a href="https://podcast.adobe.com" class="tool-url" target="_blank">podcast.adobe.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.podcast.desc">AI audio enhancement and podcast recording platform</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-guitar"></i>
+                            </div>
+                            <div class="tool-info">
+                                <a href="https://www.boomy.com" class="tool-name" target="_blank">Boomy</a>
+                                <a href="https://www.boomy.com" class="tool-url" target="_blank">boomy.com</a>
+                            </div>
+                        </div>
+                        <p class="tool-description" data-i18n="tools.boomy.desc">AI music creation platform for generating original songs instantly</p>
+                        <div class="tool-footer">
+                            <div class="tool-tags">
+                                <span class="tag free" data-i18n="tags.free">Free</span>
+                                <span class="tag premium" data-i18n="tags.premium">Premium</span>
+                            </div>
+                            <div class="tool-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-i18n="footer.about">About AI Tools Hub</h4>
+                    <p data-i18n="footer.about.desc">We curate the best AI tools to help businesses and individuals leverage the power of artificial intelligence.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer.categories">Categories</h4>
+                    <ul>
+                        <li><a href="#categories" data-i18n="categories.chatbots">AI Chatbots</a></li>
+                        <li><a href="#categories" data-i18n="categories.image">AI Image Generation</a></li>
+                        <li><a href="#categories" data-i18n="categories.writing">AI Writing Tools</a></li>
+                        <li><a href="#categories" data-i18n="categories.coding">AI Coding Tools</a></li>
+                        <li><a href="#categories" data-i18n="categories.video">AI Video Tools</a></li>
+                        <li><a href="#categories" data-i18n="categories.audio">AI Audio Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer.languages">Languages</h4>
+                    <ul>
+                        <li><a href="#" onclick="switchLanguage('en')" data-i18n="lang.english">English</a></li>
+                        <li><a href="#" onclick="switchLanguage('id')" data-i18n="lang.indonesian">Indonesian</a></li>
+                        <li><a href="#" onclick="switchLanguage('th')" data-i18n="lang.thai">Thai</a></li>
+                        <li><a href="#" onclick="switchLanguage('vi')" data-i18n="lang.vietnamese">Vietnamese</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer.info">Information</h4>
+                    <p data-i18n="footer.update">Last updated: <span id="lastUpdate">January 2024</span></p>
+                    <p data-i18n="footer.tools.count">Featured tools: <span>29</span></p>
+                    <p data-i18n="footer.contact">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:xialang22@gmail.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">
+                            xialang22@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.2);">
+                <p data-i18n="footer.copyright">&copy; 2024 AI Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 多语言配置
+        const languages = {
+            'en': {
+                title: 'AI Tools Directory - Discover Best AI Tools',
+                description: 'Discover the best AI tools for your business needs. Free & premium AI chatbots, image generators, writing assistants & coding tools directory.',
+                keywords: 'AI tools, artificial intelligence, chatbot, image generation, writing assistant, coding tools, free AI, premium AI',
+                brand: '🤖 AI Tools Hub',
+                'nav.home': 'Home',
+                'nav.categories': 'Categories',
+                'hero.title': 'Discover Amazing AI Tools',
+                'hero.subtitle': 'Find the perfect AI solution for your business needs',
+                'search.placeholder': 'Search AI tools...',
+                'stats.tools': 'AI Tools',
+                'stats.categories': 'Categories',
+                'stats.users': 'Monthly Users',
+                'stats.languages': 'Languages',
+                
+                // Categories
+                'categories.chatbots': 'AI Chatbots',
+                'categories.image': 'AI Image Generation',
+                'categories.writing': 'AI Writing Tools',
+                'categories.coding': 'AI Coding Tools',
+                'categories.video': 'AI Video Tools',
+                'categories.audio': 'AI Audio Tools',
+                
+                // Chatbot tools
+                'tools.chatgpt.desc': 'Advanced conversational AI by OpenAI for text generation, coding, and problem-solving',
+                'tools.claude.desc': 'AI assistant by Anthropic for various tasks including analysis, writing, and coding',
+                'tools.bard.desc': 'Google\'s experimental conversational AI service powered by LaMDA',
+                'tools.character.desc': 'Chat with AI characters or create your own with distinct personalities',
+                'tools.poe.desc': 'Access multiple AI chatbots including GPT-4, Claude, and others in one platform',
+                'tools.pi.desc': 'Personal AI assistant focused on helpful, harmless conversations',
+                
+                // Image generation tools
+                'tools.midjourney.desc': 'Create stunning AI-generated artwork with advanced prompting',
+                'tools.dalle.desc': 'OpenAI\'s image generation AI that creates realistic images from text descriptions',
+                'tools.stable.desc': 'Open-source image generation model that runs locally or in the cloud',
+                'tools.leonardo.desc': 'AI art generator focused on game assets and creative content',
+                'tools.playground.desc': 'User-friendly AI image generator with multiple model options',
+                'tools.canva.desc': 'Integrated AI image generator within Canva\'s design platform',
+                'tools.firefly.desc': 'Adobe\'s AI image generator integrated with Creative Cloud apps',
+                'tools.runway.desc': 'AI-powered creative tools for image, video, and audio generation',
+                
+                // Writing tools
+                'tools.jasper.desc': 'AI copywriter for marketing content, blogs, and ad copy',
+                'tools.copyai.desc': 'AI-powered copywriting assistant for various content types',
+                'tools.grammarly.desc': 'AI writing assistant for grammar, spelling, and style improvements',
+                'tools.notion.desc': 'AI writing assistant integrated into Notion workspace',
+                'tools.writesonic.desc': 'AI content generator for articles, ads, and marketing copy',
+                'tools.sudowrite.desc': 'AI writing assistant specifically designed for creative fiction writing',
+                
+                // Coding tools
+                'tools.copilot.desc': 'AI pair programmer that suggests code completions and entire functions',
+                'tools.cursor.desc': 'AI-powered code editor built for pair programming with AI',
+                'tools.tabnine.desc': 'AI code completion tool that works with multiple IDEs and languages',
+                'tools.replit.desc': 'AI coding assistant integrated into Replit\'s online IDE',
+                'tools.codeium.desc': 'Free AI-powered code completion and chat assistant',
+                'tools.codewhisperer.desc': 'Amazon\'s AI code generator with security scanning capabilities',
+                
+                // Video tools
+                'tools.synthesia.desc': 'AI video generator with realistic avatars and voiceovers',
+                'tools.luma.desc': 'AI-powered 3D video capture and generation technology',
+                'tools.descript.desc': 'AI video editor with transcription and voice cloning features',
+                'tools.pictory.desc': 'AI video creator that turns text content into engaging videos',
+                'tools.heygen.desc': 'AI video generator with customizable avatars and multilingual support',
+                
+                // Audio tools
+                'tools.elevenlabs.desc': 'Advanced AI voice synthesis and voice cloning technology',
+                'tools.mubert.desc': 'AI music generator for royalty-free background music',
+                'tools.podcast.desc': 'AI audio enhancement and podcast recording platform',
+                'tools.boomy.desc': 'AI music creation platform for generating original songs instantly',
+                
+                // Tags
+                'tags.free': 'Free',
+                'tags.premium': 'Premium',
+                'tags.opensource': 'Open Source',
+                'tags.enterprise': 'Enterprise',
+                
+                // Footer
+                'footer.about': 'About AI Tools Hub',
+                'footer.about.desc': 'We curate the best AI tools to help businesses and individuals leverage the power of artificial intelligence.',
+                'footer.categories': 'Categories',
+                'footer.languages': 'Languages',
+                'footer.info': 'Information',
+                'footer.update': 'Last updated:',
+                'footer.tools.count': 'Featured tools:',
+                'footer.contact': 'Contact us:',
+                'footer.copyright': '© 2024 AI Tools Hub. All rights reserved.',
+                'lang.english': 'English',
+                'lang.indonesian': 'Indonesian',
+                'lang.thai': 'Thai',
+                'lang.vietnamese': 'Vietnamese',
+                
+                // Open Graph
+                'og.url': 'https://alatai.id/',
+                'og.title': 'AI Tools Directory - Discover Best AI Tools',
+                'og.description': 'Discover the best AI tools for your business needs. Free & premium AI chatbots, image generators, writing assistants & coding tools.',
+                'twitter.url': 'https://alatai.id/',
+                'twitter.title': 'AI Tools Directory - Discover Best AI Tools',
+                'twitter.description': 'Discover the best AI tools for your business needs. Free & premium AI chatbots, image generators, writing assistants & coding tools.',
+            },
+            'id': {
+                title: 'Direktori Alat AI - Temukan Alat AI Terbaik Indonesia',
+                description: 'Temukan alat AI terbaik untuk kebutuhan bisnis Anda. Direktori lengkap chatbot AI, generator gambar, asisten penulisan & tools coding gratis & premium.',
+                keywords: 'alat AI, kecerdasan buatan, chatbot, generator gambar AI, asisten penulisan, tools coding, AI gratis, AI premium, Indonesia',
+                brand: '🤖 Hub Alat AI',
+                'nav.home': 'Beranda',
+                'nav.categories': 'Kategori',
+                'hero.title': 'Temukan Alat AI yang Menakjubkan',
+                'hero.subtitle': 'Temukan solusi AI yang sempurna untuk kebutuhan bisnis dan kreatif Anda',
+                'search.placeholder': 'Cari alat AI...',
+                'stats.tools': 'Alat AI',
+                'stats.categories': 'Kategori',
+                'stats.users': 'Pengguna Bulanan',
+                'stats.languages': 'Bahasa',
+                
+                // Categories
+                'categories.chatbots': 'Chatbot AI',
+                'categories.image': 'Generator Gambar AI',
+                'categories.writing': 'Alat Penulisan AI',
+                'categories.coding': 'Alat Coding AI',
+                'categories.video': 'Alat Video AI',
+                'categories.audio': 'Alat Audio AI',
+                
+                // Chatbot tools
+                'tools.chatgpt.desc': 'AI percakapan canggih dari OpenAI untuk generasi teks, coding, dan pemecahan masalah',
+                'tools.claude.desc': 'Asisten AI dari Anthropic untuk berbagai tugas termasuk analisis, penulisan, dan coding',
+                'tools.bard.desc': 'Layanan AI percakapan eksperimental Google yang didukung LaMDA',
+                'tools.character.desc': 'Chat dengan karakter AI atau buat karakter Anda sendiri dengan kepribadian unik',
+                'tools.poe.desc': 'Akses berbagai chatbot AI termasuk GPT-4, Claude, dan lainnya dalam satu platform',
+                'tools.pi.desc': 'Asisten AI personal yang fokus pada percakapan yang membantu dan aman',
+                
+                // Image generation tools
+                'tools.midjourney.desc': 'Buat karya seni AI yang menakjubkan dengan prompting canggih',
+                'tools.dalle.desc': 'AI generator gambar OpenAI yang membuat gambar realistis dari deskripsi teks',
+                'tools.stable.desc': 'Model generasi gambar open-source yang berjalan lokal atau di cloud',
+                'tools.leonardo.desc': 'Generator seni AI yang fokus pada aset game dan konten kreatif',
+                'tools.playground.desc': 'Generator gambar AI yang user-friendly dengan berbagai pilihan model',
+                'tools.canva.desc': 'Generator gambar AI yang terintegrasi dalam platform desain Canva',
+                'tools.firefly.desc': 'Generator gambar AI Adobe yang terintegrasi dengan aplikasi Creative Cloud',
+                'tools.runway.desc': 'Alat kreatif bertenaga AI untuk generasi gambar, video, dan audio',
+                
+                // Writing tools
+                'tools.jasper.desc': 'AI copywriter untuk konten marketing, blog, dan iklan',
+                'tools.copyai.desc': 'Asisten copywriting bertenaga AI untuk berbagai jenis konten',
+                'tools.grammarly.desc': 'Asisten penulisan AI untuk perbaikan grammar, ejaan, dan gaya',
+                'tools.notion.desc': 'Asisten penulisan AI yang terintegrasi dalam workspace Notion',
+                'tools.writesonic.desc': 'Generator konten AI untuk artikel, iklan, dan copy marketing',
+                'tools.sudowrite.desc': 'Asisten penulisan AI yang khusus dirancang untuk penulisan fiksi kreatif',
+                
+                // Coding tools
+                'tools.copilot.desc': 'AI pair programmer yang menyarankan code completion dan fungsi lengkap',
+                'tools.cursor.desc': 'Editor kode bertenaga AI yang dibuat untuk pair programming dengan AI',
+                'tools.tabnine.desc': 'Alat code completion AI yang bekerja dengan berbagai IDE dan bahasa',
+                'tools.replit.desc': 'Asisten coding AI yang terintegrasi dalam IDE online Replit',
+                'tools.codeium.desc': 'Code completion dan chat assistant bertenaga AI gratis',
+                'tools.codewhisperer.desc': 'Generator kode AI Amazon dengan kemampuan security scanning',
+                
+                // Video tools
+                'tools.synthesia.desc': 'Generator video AI dengan avatar realistis dan voice over',
+                'tools.luma.desc': 'Teknologi capture dan generasi video 3D bertenaga AI',
+                'tools.descript.desc': 'Editor video AI dengan fitur transkripsi dan voice cloning',
+                'tools.pictory.desc': 'Kreator video AI yang mengubah konten teks menjadi video menarik',
+                'tools.heygen.desc': 'Generator video AI dengan avatar yang dapat disesuaikan dan dukungan multibahasa',
+                
+                // Audio tools
+                'tools.elevenlabs.desc': 'Teknologi sintesis suara AI canggih dan voice cloning',
+                'tools.mubert.desc': 'Generator musik AI untuk musik latar bebas royalti',
+                'tools.podcast.desc': 'Platform peningkatan audio AI dan perekaman podcast',
+                'tools.boomy.desc': 'Platform kreasi musik AI untuk menghasilkan lagu original secara instan',
+                
+                // Tags
+                'tags.free': 'Gratis',
+                'tags.premium': 'Premium',
+                'tags.opensource': 'Open Source',
+                'tags.enterprise': 'Enterprise',
+                
+                // Footer
+                'footer.about': 'Tentang Hub Alat AI',
+                'footer.about.desc': 'Kami mengkurasi alat AI terbaik untuk membantu bisnis dan individu memanfaatkan kekuatan kecerdasan buatan.',
+                'footer.categories': 'Kategori',
+                'footer.languages': 'Bahasa',
+                'footer.info': 'Informasi',
+                'footer.update': 'Terakhir diperbarui:',
+                'footer.tools.count': 'Alat unggulan:',
+                'footer.contact': 'Hubungi kami:',
+                'footer.copyright': '© 2024 Hub Alat AI. Semua hak dilindungi.',
+                'lang.english': 'Bahasa Inggris',
+                'lang.indonesian': 'Bahasa Indonesia',
+                'lang.thai': 'Bahasa Thailand',
+                'lang.vietnamese': 'Bahasa Vietnam',
+                
+                // Open Graph
+                'og.url': 'https://alatai.id/id/',
+                'og.title': 'Direktori Alat AI - Temukan Alat AI Terbaik Indonesia',
+                'og.description': 'Temukan alat AI terbaik untuk kebutuhan bisnis Anda. Chatbot AI, generator gambar, asisten penulisan & tools coding gratis & premium.',
+                'twitter.url': 'https://alatai.id/id/',
+                'twitter.title': 'Direktori Alat AI - Temukan Alat AI Terbaik Indonesia',
+                'twitter.description': 'Temukan alat AI terbaik untuk kebutuhan bisnis Anda. Chatbot AI, generator gambar, asisten penulisan & tools coding gratis & premium.',
+            },
+            'th': {
+                title: 'ไดเรกทอรีเครื่องมือ AI - ค้นพบเครื่องมือ AI ที่ดีที่สุด',
+                description: 'ค้นพบเครื่องมือ AI ที่ดีที่สุดสำหรับความต้องการทางธุรกิจของคุณ',
+                brand: 'ศูนย์เครื่องมือ AI',
+                'nav.home': 'หน้าแรก',
+                'nav.categories': 'หมวดหมู่',
+                'nav.submit': 'ส่งเครื่องมือ',
+                'hero.title': 'ค้นพบเครื่องมือ AI ที่น่าทึ่ง',
+                'hero.subtitle': 'ค้นหาโซลูชัน AI ที่สมบูรณ์แบบสำหรับความต้องการทางธุรกิจของคุณ',
+                'search.placeholder': 'ค้นหาเครื่องมือ AI...',
+                'categories.chatbots': 'แชทบอท AI',
+                'categories.image': 'การสร้างภาพ AI',
+                'categories.writing': 'เครื่องมือเขียน AI',
+                'categories.coding': 'เครื่องมือเขียนโค้ด AI',
+                'tools.chatgpt.desc': 'AI สนทนาขั้นสูงโดย OpenAI',
+                'tools.claude.desc': 'ผู้ช่วย AI โดย Anthropic สำหรับงานต่างๆ',
+                'tools.midjourney.desc': 'สร้างงานศิลปะ AI ที่น่าทึ่ง',
+                'tools.stable.desc': 'โมเดลสร้างภาพโอเพ่นซอร์ส',
+                'tools.jasper.desc': 'นักเขียน AI สำหรับเนื้อหาการตลาด',
+                'tools.copyai.desc': 'ผู้ช่วยเขียนขายที่ขับเคลื่อนด้วย AI',
+                'tools.copilot.desc': 'โปรแกรมเมอร์ AI สำหรับนักพัฒนา',
+                'tools.cursor.desc': 'โปรแกรมแก้ไขโค้ดที่ขับเคลื่อนด้วย AI',
+                'tags.free': 'ฟรี',
+                'tags.premium': 'พรีเมียม',
+                'tags.opensource': 'โอเพ่นซอร์ส'
+            },
+            'vi': {
+                title: 'Thư Mục Công Cụ AI - Khám Phá Công Cụ AI Tốt Nhất',
+                description: 'Khám phá các công cụ AI tốt nhất cho nhu cầu kinh doanh của bạn',
+                brand: 'Trung Tâm Công Cụ AI',
+                'nav.home': 'Trang Chủ',
+                'nav.categories': 'Danh Mục',
+                'nav.submit': 'Gửi Công Cụ',
+                'hero.title': 'Khám Phá Công Cụ AI Tuyệt Vời',
+                'hero.subtitle': 'Tìm giải pháp AI hoàn hảo cho nhu cầu kinh doanh của bạn',
+                'search.placeholder': 'Tìm kiếm công cụ AI...',
+                'categories.chatbots': 'Chatbot AI',
+                'categories.image': 'Tạo Hình Ảnh AI',
+                'categories.writing': 'Công Cụ Viết AI',
+                'categories.coding': 'Công Cụ Lập Trình AI',
+                'tools.chatgpt.desc': 'AI hội thoại tiên tiến của OpenAI',
+                'tools.claude.desc': 'Trợ lý AI của Anthropic cho nhiều tác vụ',
+                'tools.midjourney.desc': 'Tạo tác phẩm nghệ thuật AI tuyệt đẹp',
+                'tools.stable.desc': 'Mô hình tạo hình ảnh mã nguồn mở',
+                'tools.jasper.desc': 'Người viết AI cho nội dung marketing',
+                'tools.copyai.desc': 'Trợ lý viết bản sao được hỗ trợ bởi AI',
+                'tools.copilot.desc': 'Lập trình viên AI cho các nhà phát triển',
+                'tools.cursor.desc': 'Trình chỉnh sửa mã được hỗ trợ bởi AI',
+                'tags.free': 'Miễn Phí',
+                'tags.premium': 'Cao Cấp',
+                'tags.opensource': 'Mã Nguồn Mở'
+            }
+        };
+
+        // 语言切换功能
+        function switchLanguage(lang) {
+            // 更新按钮状态
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // 更新页面内容
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (languages[lang][key]) {
+                    element.textContent = languages[lang][key];
+                }
+            });
+            
+            // 更新placeholder
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                if (languages[lang][key]) {
+                    element.placeholder = languages[lang][key];
+                }
+            });
+            
+            // 更新页面标题和描述
+            document.title = languages[lang].title;
+            document.querySelector('meta[name="description"]').content = languages[lang].description;
+            
+            // 保存语言偏好
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // 搜索功能
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            toolCards.forEach(card => {
+                const toolName = card.querySelector('.tool-name').textContent.toLowerCase();
+                const toolDesc = card.querySelector('.tool-description').textContent.toLowerCase();
+                
+                if (toolName.includes(searchTerm) || toolDesc.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+        });
+
+        // 页面加载时检查保存的语言偏好
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferred-language') || 'en';
+            const langBtn = document.querySelector(`[onclick="switchLanguage('${savedLang}')"]`);
+            if (langBtn) {
+                langBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

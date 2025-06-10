@@ -679,6 +679,64 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
         }
+        
+        /* Filter buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.active {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            font-weight: 600;
+        }
+        
+        /* Animated counter */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .stat-number.animated {
+            animation: countUp 2s ease-out;
+        }
+        
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -721,6 +779,14 @@
                     <i class="fas fa-search search-icon"></i>
                     <input type="text" class="form-control search-input" data-i18n-placeholder="search.placeholder" placeholder="Search AI tools..." id="searchInput">
                 </div>
+                
+                <!-- 筛选按钮 -->
+                <div class="filter-buttons" style="margin-top: 20px;">
+                    <button class="filter-btn active" onclick="filterTools('all')" data-i18n="filter.all">All Tools</button>
+                    <button class="filter-btn" onclick="filterTools('free')" data-i18n="filter.free">Free Only</button>
+                    <button class="filter-btn" onclick="filterTools('premium')" data-i18n="filter.premium">Premium Only</button>
+                    <button class="filter-btn" onclick="filterTools('opensource')" data-i18n="filter.opensource">Open Source</button>
+                </div>
             </div>
         </div>
         
@@ -729,19 +795,19 @@
             <div class="stats-section">
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span class="stat-number" data-count="150">150+</span>
+                        <span class="stat-number animated" data-count="29">0</span>
                         <span class="stat-label" data-i18n="stats.tools">AI Tools</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="12">12</span>
+                        <span class="stat-number animated" data-count="6">0</span>
                         <span class="stat-label" data-i18n="stats.categories">Categories</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="50000">50K+</span>
+                        <span class="stat-number animated" data-count="10000">0</span>
                         <span class="stat-label" data-i18n="stats.users">Monthly Users</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="4">4</span>
+                        <span class="stat-number animated" data-count="4">0</span>
                         <span class="stat-label" data-i18n="stats.languages">Languages</span>
                     </div>
                 </div>
@@ -1647,11 +1713,12 @@
                 
                 <div class="footer-section">
                     <h4 data-i18n="footer.info">Information</h4>
-                    <p data-i18n="footer.update">Last updated: <span id="lastUpdate">January 2024</span></p>
+                    <p data-i18n="footer.update">Last updated: <span id="lastUpdate">January 2025</span></p>
                     <p data-i18n="footer.tools.count">Featured tools: <span>29</span></p>
-                    <p data-i18n="footer.contact">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:xialang22@gmail.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">
+                    <p>
+                        <span data-i18n="footer.contact">Contact us:</span><br>
+                        <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                        <a href="mailto:xialang22@gmail.com" style="color: #6366f1; text-decoration: none; font-weight: 500;">
                             xialang22@gmail.com
                         </a>
                     </p>
@@ -1687,6 +1754,12 @@
                 'stats.categories': 'Categories',
                 'stats.users': 'Monthly Users',
                 'stats.languages': 'Languages',
+                
+                // Filter buttons
+                'filter.all': 'All Tools',
+                'filter.free': 'Free Only',
+                'filter.premium': 'Premium Only',
+                'filter.opensource': 'Open Source',
                 
                 // Categories
                 'categories.chatbots': 'AI Chatbots',
@@ -1758,7 +1831,7 @@
                 'footer.update': 'Last updated:',
                 'footer.tools.count': 'Featured tools:',
                 'footer.contact': 'Contact us:',
-                'footer.copyright': '© 2024 AI Tools Hub. All rights reserved.',
+                'footer.copyright': '© 2025 AI Tools Hub. All rights reserved.',
                 'lang.english': 'English',
                 'lang.indonesian': 'Indonesian',
                 'lang.thai': 'Thai',
@@ -1780,12 +1853,18 @@
                 'nav.home': 'Beranda',
                 'nav.categories': 'Kategori',
                 'hero.title': 'Temukan Alat AI yang Menakjubkan',
-                'hero.subtitle': 'Temukan solusi AI yang sempurna untuk kebutuhan bisnis dan kreatif Anda',
+                'hero.subtitle': 'Temukan solusi AI terbaik untuk bisnis, kreativitas, dan produktivitas Anda. Kumpulan alat kecerdasan buatan gratis dan premium.',
                 'search.placeholder': 'Cari alat AI...',
                 'stats.tools': 'Alat AI',
                 'stats.categories': 'Kategori',
                 'stats.users': 'Pengguna Bulanan',
                 'stats.languages': 'Bahasa',
+                
+                // Filter buttons
+                'filter.all': 'Semua Alat',
+                'filter.free': 'Gratis Saja',
+                'filter.premium': 'Premium Saja',
+                'filter.opensource': 'Open Source',
                 
                 // Categories
                 'categories.chatbots': 'Chatbot AI',
@@ -1857,7 +1936,7 @@
                 'footer.update': 'Terakhir diperbarui:',
                 'footer.tools.count': 'Alat unggulan:',
                 'footer.contact': 'Hubungi kami:',
-                'footer.copyright': '© 2024 Hub Alat AI. Semua hak dilindungi.',
+                'footer.copyright': '© 2025 Hub Alat AI. Semua hak dilindungi.',
                 'lang.english': 'Bahasa Inggris',
                 'lang.indonesian': 'Bahasa Indonesia',
                 'lang.thai': 'Bahasa Thailand',
@@ -1972,13 +2051,134 @@
             });
         });
 
-        // 页面加载时检查保存的语言偏好
+        // 工具筛选功能
+        function filterTools(filter) {
+            // 更新按钮状态
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            toolCards.forEach(card => {
+                const tags = card.querySelectorAll('.tag');
+                let shouldShow = false;
+                
+                if (filter === 'all') {
+                    shouldShow = true;
+                } else if (filter === 'free') {
+                    shouldShow = Array.from(tags).some(tag => tag.textContent.toLowerCase().includes('free') || tag.textContent.toLowerCase().includes('gratis'));
+                } else if (filter === 'premium') {
+                    shouldShow = Array.from(tags).some(tag => tag.textContent.toLowerCase().includes('premium'));
+                } else if (filter === 'opensource') {
+                    shouldShow = Array.from(tags).some(tag => tag.textContent.toLowerCase().includes('open source'));
+                }
+                
+                card.style.display = shouldShow ? 'block' : 'none';
+                if (shouldShow) {
+                    card.style.animation = 'fadeInUp 0.5s ease-out';
+                }
+            });
+        }
+
+        // 数字动画功能
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number.animated');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 50;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (target >= 1000) {
+                            counter.textContent = Math.floor(current).toLocaleString() + '+';
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        if (target >= 1000) {
+                            counter.textContent = target.toLocaleString() + '+';
+                        } else {
+                            counter.textContent = target;
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // 智能语言检测
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.languages[0];
+            let detectedLang = 'en'; // 默认英语
+            
+            if (browserLang.startsWith('id')) {
+                detectedLang = 'id';
+            } else if (browserLang.startsWith('th')) {
+                detectedLang = 'th';
+            } else if (browserLang.startsWith('vi')) {
+                detectedLang = 'vi';
+            }
+            
+            return detectedLang;
+        }
+
+        // 滚动到顶部功能
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // 导航栏滚动效果
+        function handleNavbarScroll() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // 滚动到顶部按钮显示/隐藏
+        function handleScrollTopButton() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        }
+
+        // 页面加载时的初始化
         document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferred-language') || 'en';
+            // 智能语言检测
+            const savedLang = localStorage.getItem('preferred-language') || detectLanguage();
             const langBtn = document.querySelector(`[onclick="switchLanguage('${savedLang}')"]`);
             if (langBtn) {
                 langBtn.click();
             }
+            
+            // 启动数字动画
+            setTimeout(animateCounters, 500);
+            
+            // 滚动事件监听
+            window.addEventListener('scroll', () => {
+                handleNavbarScroll();
+                handleScrollTopButton();
+            });
+            
+            // 滚动到顶部按钮点击事件
+            document.getElementById('scrollTop').addEventListener('click', scrollToTop);
+            
+            // 初始化导航栏状态
+            handleNavbarScroll();
+            handleScrollTopButton();
         });
     </script>
 </body>
